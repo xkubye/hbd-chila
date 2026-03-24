@@ -1,0 +1,212 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+/* Background */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/bg.jpg') center center / cover no-repeat;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+/* Character */
+#character {
+  position: absolute;
+  bottom: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-height: 60vh;
+  width: auto;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+/* Bounce Animation */
+.bounce {
+  animation: bounce 0.4s;
+}
+
+@keyframes bounce {
+  0% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -20px); }
+  100% { transform: translate(-50%, 0); }
+}
+
+/* Dialog Box */
+.dialog-box {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 160px; /* 🔥 KUNCI TINGGI */
+  
+  background: white;
+  border-top: 4px solid #1e3a8a;
+  padding: 15px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 3; /* 🔥 lebih tinggi */
+}
+}
+
+/* Text */
+#dialog-text {
+  color: #1e3a8a;
+  font-size: clamp(14px, 2.5vw, 20px);
+
+  flex: 1; /* 🔥 BIAR NGISI RUANG */
+  overflow: hidden;
+}
+
+/* Buttons */
+button {
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  margin: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: clamp(12px, 2.5vw, 16px);
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  #character {
+    bottom: 180px;
+    max-height: 60vh;
+  }
+
+  .dialog-box {
+    padding: 15px;
+  }
+
+  button {
+    width: 80%;
+    max-width: 250px;
+    display: block;
+    margin: 8px auto;
+  }
+}
+
+/* 🖥️ Large Screen */
+@media (min-width: 1200px) {
+  #character {
+    max-height: 70vh;
+  }
+
+  .dialog-box {
+    padding: 30px;
+  }
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: black; /* fallback biar gak keliatan celah putih */
+}
+
+/* ===================== */
+/* 📱 LANDSCAPE MODE FIX */
+/* ===================== */
+@media (orientation: landscape) {
+
+  /* Character lebih kecil & naik */
+  #character {
+    max-height: 60vh;
+    bottom: 80px;
+  }
+
+  /* Dialog box jadi lebih tipis */
+  .dialog-box {
+    padding: 10px 15px;
+  }
+
+  /* Text lebih kecil */
+  #dialog-text {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  /* Button horizontal (biar hemat space) */
+  ##choices {
+  min-height: 60px; /* 🔥 BIAR TOMBOL GAK LOMPAT */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+  button {
+    width: auto;
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+/* Name Box (Nama Karakter) */
+.name-box {
+  position: absolute;
+  top: -18px;
+  left: 20px;
+  background: #1e3a8a;
+  color: white;
+  padding: 5px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ===================== */
+/* LOADING SCREEN */
+/* ===================== */
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0b1120; /* dark blue Conan vibe */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader-content {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+}
+
+.loader-content img {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+/* Fade out animation */
+.fade-out {
+  animation: fadeOut 0.6s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+

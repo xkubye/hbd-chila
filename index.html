@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Start</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- LOADING SCREEN -->
+<div id="loading-screen">
+  <div class="loader-content">
+    <img src="https://i.gifer.com/ZZ5H.gif" alt="loading">
+    <p>Loading Case...</p>
+  </div>
+</div>
+
+<body>
+
+  <!-- Background -->
+  <div class="background"></div>
+
+  <!-- Character -->
+  <img id="character" src="assets/conan1.png" alt="Conan">
+
+  <!-- Dialog Box -->
+  <div class="dialog-box">
+
+  <!-- NAME BAR -->
+  <div class="name-box">Conan</div>
+
+  <p id="dialog-text">Hey, Kamu siapa??</p>
+
+    <div id="choices">
+      <button onclick="chooseName('keyko')">Aku Jokowi tau!!</button>
+      <button onclick="chooseName('chila')">Aku Chillaaa yang imup >\\<</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
